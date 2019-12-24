@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{leaflet}" />
+    <file url="file://$PROJECT_DIR$/../reidOsNet" libraries="{leaflet}" />
+    <file url="file://$USER_HOME$/darknet" libraries="{leaflet}" />
+    <file url="file://$USER_HOME$/deep-person-reid" libraries="{leaflet}" />
+  </component>
+</project>

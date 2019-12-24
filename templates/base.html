@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Тут у нас карта</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+  <script src="{{ url_for('static', filename='js/jquery-3.4.1.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+</head>
+<body>
+<a href="/">
+  <div class="header-bar border-box-sizing"><h1>Тут карта</h1></div>
+</a>
+<a href="{{ url_for('query') }}">
+  <div class="header-bar border-box-sizing"><h1>Тут запрос</h1></div>
+</a>
+<a href="{{ url_for('galery') }}">
+  <div class="header-bar border-box-sizing"><h1>Тут галерея</h1></div>
+</a>
+<a href="{{ url_for('reid') }}">
+  <div class="header-bar border-box-sizing"><h1>Тут результат</h1></div>
+</a>
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

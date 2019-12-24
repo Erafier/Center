@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <a href="{{ url_for('detect', cluster=cluster, id=id) }}"> Detect </a>
+  <p>id = {{ id }}</p>
+  <p> cluster = {{ cluster }}</p>
+  <div class="gallery">
+    {% for image in image_catalog %}
+      <div class="row">
+        <figure class="col">
+          <img src="{{ url_for('static', filename=image) }}" alt="{{ image }}" width="50%">
+        </figure>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

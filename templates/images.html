@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <a href="
+  {% if query %}
+    {{ url_for('clean_query') }}
+  {% elif galery %}
+    {{ url_for('clean_galery') }}
+  {% endif %}">
+    Очистить
+  </a>
+  {% for image in image_catalog %}
+    <img src="{{ url_for('static', filename=image) }}" alt="{{ image }}">
+    <br><br>
+  {% endfor %}
+{% endblock %}
