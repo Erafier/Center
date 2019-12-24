@@ -1,4 +1,10 @@
 # Project exclude paths
 /venv/
-/static/
-/detector/configs/
+/detector/configs/Base-RCNN-FPN.yaml
+/detector/configs/faster_rcnn_X_101.pkl
+/detector/configs/faster_rcnn_X_101_32x8d_FPN_3x.yaml
+/static/img/cameras/
+/static/img/galery/
+/static/img/query/
+/static/img/result/
+/static/reid/
