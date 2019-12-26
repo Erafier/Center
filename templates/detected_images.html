@@ -4,7 +4,7 @@
   <a href="{{ url_for('detected_to_query', id=id, cluster=cluster) }}">В запросы</a><br>
   <a href="{{ url_for('detected_to_galery', id=id, cluster=cluster) }}">В галерею</a><br>
   {% for image in image_catalog %}
-    <img src="{{ url_for('static', filename=image) }}" alt="{{ image }}">
+    <img class="remove-img" src="{{ url_for('static', filename=image) }}" alt="{{ image }}">
     <br><br>
   {% endfor %}
 {% endblock %}
