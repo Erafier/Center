@@ -19,7 +19,10 @@ def index():
 @app.route('/camera/<int:cluster>/<int:id>/')
 def camera_detail(cluster, id):
     img_catalog = make_camera_img_catalog(cluster, id)
-    return render_template('camera_detail.html', cluster=cluster, id=id, image_catalog=img_catalog)
+    address = [camera['address'] for camera in camera_data if
+               camera['cluster_id'] == str(cluster)
+               and camera['camera_id'] == str(id)][0]
+    return render_template('camera_detail.html', cluster=cluster, id=id, address=address, image_catalog=img_catalog)
 
 
 @app.route('/camera/<int:cluster>/<int:id>/detect')

@@ -1,8 +1,9 @@
 {% extends "base.html" %}
-
+{% block title %} Карта {% endblock %}
 {% block content %}
-  <div class="container">
-    <div id="map" style="width:900px; height:580px;"></div>
+  <br>
+  <div class="row justify-content-center a">
+    <div class="col-9 border-danger" id="map" style="width:900px; height:580px;"></div>
   </div>
   <script>
       var mapOptions = {

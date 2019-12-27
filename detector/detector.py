@@ -1,12 +1,13 @@
-import torch
-import os.path as osp
 import os
+import os.path as osp
+
 import cv2
 import matplotlib.pyplot as plt
-from detectron2.engine import DefaultPredictor
+import torch
 from detectron2.config import get_cfg
-from detectron2.utils.visualizer import Visualizer
 from detectron2.data import MetadataCatalog
+from detectron2.engine import DefaultPredictor
+from detectron2.utils.visualizer import Visualizer
 
 
 class Detector:
@@ -50,7 +51,7 @@ class Detector:
                         y2 = int(coordinates[3])
                         cropped = image[y1:y2, x1:x2]
                         if cropped.shape[1] > 35 and (cropped.shape[0] / cropped.shape[1] >= 2.0):
-                            # cropped = cv2.resize(cropped, (128, 256))
+                            cropped = cv2.resize(cropped, (128, 256))
                             save_path = osp.join(osp.split(image_path)[0], 'detected')
                             if not osp.exists(save_path):
                                 os.makedirs(save_path)

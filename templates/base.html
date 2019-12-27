@@ -2,29 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Тут у нас карта</title>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='icon.ico') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
   <script src="{{ url_for('static', filename='js/jquery-3.4.1.js') }}"></script>
   <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-
 </head>
 <body>
-<a href="/">
-  <div class="header-bar border-box-sizing"><h1>Тут карта</h1></div>
-</a>
-<a href="{{ url_for('query') }}">
-  <div class="header-bar border-box-sizing"><h1>Тут запрос</h1></div>
-</a>
-<a href="{{ url_for('galery') }}">
-  <div class="header-bar border-box-sizing"><h1>Тут галерея</h1></div>
-</a>
-<a href="{{ url_for('reid') }}">
-  <div class="header-bar border-box-sizing"><h1>Тут результат</h1></div>
-</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{{ url_for('index') }}">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="">
+    Ситуационный центр
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('query') }}">Запрос<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('galery') }}">Галерея</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('reid') }}">Результат</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 {% block content %}
 {% endblock %}
-
 </body>
 </html>

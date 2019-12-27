@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% block title %} Просмотр подозреваемых {% endblock %}
 {% block content %}
   <a href="
   {% if query %}
@@ -7,10 +7,12 @@
   {% elif galery %}
     {{ url_for('clean_galery') }}
   {% endif %}">
-    Очистить
+    <button class="btn btn-danger">
+      Очистить
+    </button>
   </a>
+  <br>
   {% for image in image_catalog %}
     <img src="{{ url_for('static', filename=image) }}" alt="{{ image }}">
-    <br><br>
   {% endfor %}
 {% endblock %}
