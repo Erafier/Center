@@ -3,15 +3,14 @@
 {% block content %}
   <br>
   <div class="col">
-
     {% for image in image_catalog %}
       <div class="container">
-        <img class="mb-2 ml-2" src="{{ url_for('static', filename=image) }}" alt="{{ image }}">
+        <img class="mb-2 ml-2" src="{{ url_for('static', filename=image.path) }}" alt="{{ image.path }}">
         <br>
-        <p>Тут список адресов </p>
+        {% for adress in image.adress %}
+          <p>{{ adress }}</p>
+        {% endfor %}
       </div>
     {% endfor %}
-
-
   </div>
 {% endblock %}

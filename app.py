@@ -84,15 +84,12 @@ def clean_galery():
 
 @app.route('/reid')
 def reid():
-    result_path = 'static/img/result'
-    clean_directory(result_path)
+    clean_directory('static/img/result')
     camera_count = len(find_unique_camera_id('static/img/galery'))
     make_reid(camera_count)
-    result_imgs = os.listdir(result_path)
-    result_catalog = []
-    for img in result_imgs:
-        result_catalog.append('img/result/' + img)
-    return render_template('result_imgs.html', image_catalog=result_catalog)
+    result_catalog = get_result_catalog()
+    return render_template('result_imgs.html',
+                           image_catalog=result_catalog)
 
 
 if __name__ == '__main__':

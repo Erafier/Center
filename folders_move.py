@@ -100,3 +100,24 @@ def get_address_from_id(camera_cluster_id: str):
                camera['cluster_id'] == str(cluster)
                and camera['camera_id'] == str(id)][0]
     return address
+
+
+def get_result_catalog(result_file='static/reid/cameras.json'):
+    with open(result_file, 'r') as f:
+        result = json.load(f)
+    reslut_catalog = [
+        {
+            'path': osp.join('img/result', path),
+            'adress': [
+                get_address_from_id(str(camera_cluster_id))
+                for camera_cluster_id in ids
+            ],
+        } for path, ids in result.items()
+    ]
+    return reslut_catalog
+
+
+def get_address_from_path(path):
+    pattern = re.compile(r'_c(\d+)_')
+    camera_cluster_id = pattern.findall(path)[0]
+    return get_address_from_id(camera_cluster_id)
