@@ -19,9 +19,7 @@ def index():
 @app.route('/camera/<int:cluster>/<int:id>/')
 def camera_detail(cluster, id):
     img_catalog = make_camera_img_catalog(cluster, id)
-    address = [camera['address'] for camera in camera_data if
-               camera['cluster_id'] == str(cluster)
-               and camera['camera_id'] == str(id)][0]
+    address = get_address_from_id(str(cluster) + str(id))
     return render_template('camera_detail.html', cluster=cluster, id=id, address=address, image_catalog=img_catalog)
 
 
@@ -54,7 +52,11 @@ def detected_to_galery(cluster, id):
 @app.route('/query')
 def query():
     query_catalog = prepare_query()
-    return render_template('images.html', image_catalog=query_catalog, query=True)
+    used_cameras = find_unique_camera_id('static/img/query')
+    return render_template('images.html',
+                           image_catalog=query_catalog,
+                           used_cameras=used_cameras,
+                           query=True)
 
 
 @app.route('/query/clean')
@@ -66,7 +68,12 @@ def clean_query():
 @app.route('/galery')
 def galery():
     galery_catalog = prepare_galery()
-    return render_template('images.html', image_catalog=galery_catalog, galery=True)
+    used_cameras = find_unique_camera_id('static/img/galery')
+    return render_template('images.html',
+                           image_catalog=galery_catalog,
+                           used_cameras=used_cameras,
+                           address=get_address_from_id,
+                           galery=True)
 
 
 @app.route('/galery/clean')
@@ -78,15 +85,14 @@ def clean_galery():
 @app.route('/reid')
 def reid():
     result_path = 'static/img/result'
-    result_imgs = os.listdir(result_path)
-    for img in result_imgs:
-        os.remove(osp.join(result_path, img))
-    make_reid(10)
+    clean_directory(result_path)
+    camera_count = len(find_unique_camera_id('static/img/galery'))
+    make_reid(camera_count)
     result_imgs = os.listdir(result_path)
     result_catalog = []
     for img in result_imgs:
         result_catalog.append('img/result/' + img)
-    return render_template('images.html', image_catalog=result_catalog)
+    return render_template('result_imgs.html', image_catalog=result_catalog)
 
 
 if __name__ == '__main__':

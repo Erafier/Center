@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Просмотр подозреваемых {% endblock %}
+{% block content %}
+  <br>
+  <div class="col">
+
+    {% for image in image_catalog %}
+      <div class="container">
+        <img class="mb-2 ml-2" src="{{ url_for('static', filename=image) }}" alt="{{ image }}">
+        <br>
+        <p>Тут список адресов </p>
+      </div>
+    {% endfor %}
+
+
+  </div>
+{% endblock %}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>{% block title %}{% endblock %}</title>
-  <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='icon.ico') }}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/icon.ico') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
   <script src="{{ url_for('static', filename='js/jquery-3.4.1.js') }}"></script>
   <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
@@ -13,7 +13,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="{{ url_for('index') }}">
-    <img src="{{ url_for('static', filename='logo.png') }}" alt="">
+    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="">
     Ситуационный центр
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

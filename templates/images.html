@@ -12,7 +12,13 @@
     </button>
   </a>
   <br>
-  {% for image in image_catalog %}
-    <img src="{{ url_for('static', filename=image) }}" alt="{{ image }}">
-  {% endfor %}
+  <p>Люди с камер:<br>
+    {% for camera in used_cameras %}
+      Камера № {{ camera }} по адресу {{ address(camera) }} <br>
+    {% endfor %}</p>
+  <div class="row">
+    {% for image in image_catalog %}
+      <img class="mb-2 ml-2" src="{{ url_for('static', filename=image) }}" alt="{{ image }}">
+    {% endfor %}
+  </div>
 {% endblock %}
