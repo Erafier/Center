@@ -109,7 +109,7 @@ def get_result_catalog(result_file='static/reid/cameras.json'):
         {
             'path': osp.join('img/result', path),
             'adress': [
-                get_address_from_id(str(camera_cluster_id))
+                (camera_cluster_id, get_address_from_id(str(camera_cluster_id)))
                 for camera_cluster_id in ids
             ],
         } for path, ids in result.items()
