@@ -1,12 +1,12 @@
+import torch
 import torchreid
 
 
 def make_reid(visrank):
     datamanager = torchreid.data.ImageDataManager(
         root='static',
-        sources='mydataset',
-        targets='mydataset',
-        cuhk03_labeled=True,
+        sources='center',
+        targets='center',
         height=256,
         width=128,
         batch_size_train=32,
@@ -21,7 +21,8 @@ def make_reid(visrank):
         pretrained=True
     )
     torchreid.utils.load_pretrained_weights(model, 'static/reid/model.pth.tar-50')
-    model = model.cuda()
+    if torch.cuda.is_available():
+        model = model.cuda()
 
     optimizer = torchreid.optim.build_optimizer(
         model,
@@ -57,4 +58,4 @@ def make_reid(visrank):
 
 
 if __name__ == "__main__":
-    make_reid()
+    make_reid(5)

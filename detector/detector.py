@@ -8,6 +8,7 @@ from detectron2.config import get_cfg
 from detectron2.data import MetadataCatalog
 from detectron2.engine import DefaultPredictor
 from detectron2.utils.visualizer import Visualizer
+from tqdm import tqdm
 
 
 class Detector:
@@ -22,6 +23,8 @@ class Detector:
         self.cfg.merge_from_file(config_path)
         self.cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = thresh
         self.cfg.MODEL.WEIGHTS = weight_path
+        if not torch.cuda.is_available():
+            self.cfg.MODEL.DEVICE = 'cpu'
         self.predictor = DefaultPredictor(self.cfg)
         print('Сеть успешно загружена')
 
@@ -35,7 +38,7 @@ class Detector:
     def save_bboxes(self, image_path_catalog, camera_cluster_id):
         frame_id = 0
         image_count = 0
-        for image_path in image_path_catalog:
+        for image_path in tqdm(image_path_catalog):
             image_count += 1
             image = cv2.imread(image_path)
             if image is not None:

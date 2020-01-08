@@ -56,6 +56,7 @@ def query():
     return render_template('images.html',
                            image_catalog=query_catalog,
                            used_cameras=used_cameras,
+                           address=get_address_from_id,
                            query=True)
 
 
