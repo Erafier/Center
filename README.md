@@ -21,10 +21,12 @@ $ export PATH=~/miniconda/bin:$PATH
     $ conda create --name center python=3.7
     $ conda activate center
     $ pip install -r requirements.txt
-    $ conda install pytorch torchvision cudatoolkit=9.0 -c pytorch
+    ```
+    Установка на машину с гпу: `$ conda install pytorch torchvision cudatoolkit=9.0 -c pytorch`
+    Установка без гпу: `$ conda install pytorch torchvision cpuonly -c pytorch`
+    ```
     $ python setup.py develop
-  * Установка на машину с гпу: conda install pytorch torchvision cudatoolkit=9.0 -c pytorch
-  * Установка без гпу: conda install pytorch torchvision cpuonly -c pytorch
+  
 2. Установить пакеты в окружении center:
 - flask: `pip install flask`
 - pycocotools: `pip install cython; pip install git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI`
