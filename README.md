@@ -9,7 +9,7 @@ rm ~/miniconda.sh
 ```
 1. Должны быть установлены пакеты:  
 - flask
-- pycocotools: `pip install cython; pip install git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'
+- pycocotools: `pip install cython; pip install git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI`
   
 2. torchreid по инструкции из репозитория
     ```
