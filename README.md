@@ -1,7 +1,7 @@
 # Center
 
 ## Установка
-На машине должен быть установлен gcc: `sudo apt install gcc`
+На машине должен быть установлен gcc: `sudo apt install gcc g++`
 
 В первую очередь установить пакетный менеджер miniconda:
 ```
@@ -32,7 +32,7 @@ $ export PATH=~/miniconda/bin:$PATH
 2. Установить пакеты в окружении center:
 - flask: `pip install flask`
 - pycocotools: `pip install cython; pip install git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI`
-3. detectron2 по инструкции из репозитория
+3. detectron2 по инструкции из репозитория, из домашней директории
   ```  
   git clone https://github.com/facebookresearch/detectron2.git
   cd detectron2
@@ -42,5 +42,6 @@ $ export PATH=~/miniconda/bin:$PATH
 5. Ссылка на изображения: https://drive.google.com/file/d/1v4-FuYKdz3uzW4cn7hYdK97kFINaNX_a/view?usp=sharing
   Загрузить командой `gdown --id 1v4-FuYKdz3uzW4cn7hYdK97kFINaNX_a` и распаковать `unzip static.zip -d Center`
 6. Ссылка на конфиг и веса детектора: https://drive.google.com/file/d/1X35TJDyQEbk55THSsn63l04I4nfJYXwH/view?usp=sharing
-  Загрузить командой `gdown --id 1X35TJDyQEbk55THSsn63l04I4nfJYXwH` и распаковать `uunzip configs.zip -d Center/detector/`
+  Загрузить командой `gdown --id 1X35TJDyQEbk55THSsn63l04I4nfJYXwH` и распаковать `unzip configs.zip -d Center/detector/`
 7. Запускать командой `python app.py` из директории с проектом
+8. Перейти в строке браузера по адресу 127.0.0.1:5000
