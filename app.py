@@ -26,8 +26,8 @@ def camera_detail(cluster, id):
 @app.route('/camera/<int:cluster>/<int:id>/detect')
 def detect(cluster, id):
     img_catalog = make_camera_img_catalog(cluster, id)
-    predictor = Detector(config_path='detector/configs/faster_rcnn_X_101_32x8d_FPN_3x.yaml',
-                         weight_path='detector/configs/faster_rcnn_X_101.pkl')
+    predictor = Detector(config_path='detector/configs/faster_rcnn_R_101_FPN_3x.yaml',
+                         weight_path='detector/configs/faster_rcnn_R_101.pkl')
     img_catalog = add_static_to_catalog(img_catalog)
     bboxes_catalog = 'static/img/cameras/cluster_' + str(cluster) + '/camera_' + str(id) + '/detected'
     clean_directory(bboxes_catalog)
