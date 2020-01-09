@@ -8,9 +8,7 @@ chmod +x Miniconda3-latest-Linux-x86_64.sh
 ./Miniconda-latest-Linux-x86_64.sh
 ```
 1. Должны быть установлены пакеты:  
-- flask
-- pycocotools: `pip install cython; pip install git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI`
-  
+
 2. torchreid по инструкции из репозитория
     ```
     $ git clone https://github.com/erafier/deep-person-reid.git
@@ -22,6 +20,9 @@ chmod +x Miniconda3-latest-Linux-x86_64.sh
     $ python setup.py develop
   * Установка на машину с гпу: conda install pytorch torchvision cudatoolkit=9.0 -c pytorch
   * Установка без гпу: conda install pytorch torchvision cpuonly -c pytorch
+2. Установить пакеты:
+- flask: `pip install flask`
+- pycocotools: `pip install cython; pip install git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI`
 3. detectron2 по инструкции из репозитория
   ```  
   git clone https://github.com/facebookresearch/detectron2.git
