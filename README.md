@@ -22,7 +22,7 @@ $ export PATH=~/miniconda/bin:$PATH
     $ conda activate center
     $ pip install -r requirements.txt
     ```
-    Установка на машину с гпу: `$ conda install pytorch torchvision cudatoolkit=9.0 -c pytorch`
+    Установка на машину с гпу: `$ conda install pytorch torchvision cudatoolkit=9.0 -c pytorch`  
     Установка без гпу: `$ conda install pytorch torchvision cpuonly -c pytorch`
     ```
     $ python setup.py develop
