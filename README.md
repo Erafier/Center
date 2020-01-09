@@ -23,9 +23,11 @@ chmod +x Miniconda-latest-Linux-x86_64.sh
   * Установка на машину с гпу: conda install pytorch torchvision cudatoolkit=9.0 -c pytorch
   * Установка без гпу: conda install pytorch torchvision cpuonly -c pytorch
 3. detectron2 по инструкции из репозитория
-`  git clone https://github.com/facebookresearch/detectron2.git
-   cd detectron2
-   pip install -e .`
+  ```  
+  git clone https://github.com/facebookresearch/detectron2.git
+  cd detectron2
+  pip install -e .
+  ```
 4. Скачать данный репозиторий командой `git clone https://github.com/Erafier/Center.git`
 4. Ссылка на изображения: https://drive.google.com/file/d/1v4-FuYKdz3uzW4cn7hYdK97kFINaNX_a/view?usp=sharing
   Загрузить командой `gdown --id 1v4-FuYKdz3uzW4cn7hYdK97kFINaNX_a` и распаковать `unzip static.zip -d Center`
