@@ -18,7 +18,7 @@ def make_reid(visrank):
         name='osnet_ain_x1_0',
         num_classes=datamanager.num_train_pids,
         loss='softmax',
-        pretrained=True
+        pretrained=False
     )
     torchreid.utils.load_pretrained_weights(model, 'static/reid/model.pth.tar-50')
     if torch.cuda.is_available():
