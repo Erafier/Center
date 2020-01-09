@@ -13,7 +13,7 @@
       $ conda activate center
       $ pip install -r requirements.txt
       $ conda install pytorch torchvision cudatoolkit=9.0 -c pytorch
-      $ python setup.py develop```
+      $ python setup.py develop
     * Установка на машину с гпу: conda install pytorch torchvision cudatoolkit=9.0 -c pytorch
     * Установка без гпу: conda install pytorch torchvision cpuonly -c pytorch
   3. detectron2 по инструкции из репозитория
