@@ -7,6 +7,12 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 chmod +x Miniconda3-latest-Linux-x86_64.sh
 ./Miniconda-latest-Linux-x86_64.sh
 ```
+или
+```
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
+bash ~/miniconda.sh -b -p ~/miniconda 
+rm ~/miniconda.sh
+```
 1. torchreid
     ```
     $ git clone https://github.com/erafier/deep-person-reid.git
