@@ -1,6 +1,8 @@
 # Center
 
 ## Установка
+На машине должен быть установлен gcc: `sudo apt install gcc`
+
 В первую очередь установить пакетный менеджер miniconda:
 ```
 $ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
