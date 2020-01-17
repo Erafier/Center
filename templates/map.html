@@ -26,7 +26,7 @@
               icon: customIcon
           };
           var marker = new L.marker({{ marker.coordinates }}, markerOptions);
-          marker.bindPopup('<a href="{{ url_for('camera_detail', cluster=marker.cluster_id, id=marker.camera_id)}}"> <button type="button" class="btn btn-primary">Камера № {{marker.camera_id}} <br> Просмотреть камеру</button></a').openPopup();
+          marker.bindPopup('<a href="{{ url_for('camera_detail', cluster=marker.cluster_id, id=marker.camera_id)}}"> <button type="button" class="btn btn-primary">Камера № {{marker.cluster_id}}{{marker.camera_id}} <br> Просмотреть камеру</button></a').openPopup();
           marker.addTo(map);
 
       {% endfor %}

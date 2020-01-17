@@ -39,8 +39,8 @@ $ export PATH=~/miniconda/bin:$PATH
   pip install -e .
   ```
 4. Скачать данный репозиторий командой `git clone https://github.com/Erafier/Center.git`
-5. Ссылка на изображения: https://drive.google.com/file/d/1v4-FuYKdz3uzW4cn7hYdK97kFINaNX_a/view?usp=sharing
-  Загрузить командой `gdown --id 1v4-FuYKdz3uzW4cn7hYdK97kFINaNX_a` и распаковать `unzip static.zip -d Center`
+5. Ссылка на изображения: https://drive.google.com/file/d/1j26AIpZ5CurMV7WBdQFQUKn__SGc-JNH/view?usp=sharing
+  Загрузить командой `gdown --id 1j26AIpZ5CurMV7WBdQFQUKn__SGc-JNH` и распаковать `unzip static.zip -d Center`
 6. Ссылка на конфиг и веса детектора: https://drive.google.com/file/d/1X35TJDyQEbk55THSsn63l04I4nfJYXwH/view?usp=sharing
   Загрузить командой `gdown --id 1X35TJDyQEbk55THSsn63l04I4nfJYXwH` и распаковать `unzip configs.zip -d Center/detector/`
 7. Запускать командой `python app.py` из директории с проектом

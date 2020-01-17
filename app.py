@@ -8,7 +8,6 @@ app = Flask(__name__)
 
 with open('camera_data.json', 'r') as f:
     camera_data = json.load(f)
-    camera_data = [camera for camera in camera_data if camera['cluster_id'] != '0']
 
 
 @app.route('/')

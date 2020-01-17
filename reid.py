@@ -8,17 +8,12 @@ def make_reid(visrank):
         sources='center',
         targets='center',
         height=256,
-        width=128,
-        batch_size_train=32,
-        batch_size_test=100,
-        transforms=['random_flip', 'random_crop', 'random_erase']
+        width=128
     )
 
     model = torchreid.models.build_model(
         name='osnet_ain_x1_0',
         num_classes=datamanager.num_train_pids,
-        loss='softmax',
-        pretrained=False
     )
     torchreid.utils.load_pretrained_weights(model, 'static/reid/model.pth.tar-50')
     if torch.cuda.is_available():
@@ -50,7 +45,6 @@ def make_reid(visrank):
         eval_freq=10,
         print_freq=10,
         visrank_topk=visrank,
-        ranks=[1],
         test_only=True,
         visrank=True,
         rerank=False
